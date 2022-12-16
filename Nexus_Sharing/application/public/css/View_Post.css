@@ -1,0 +1,128 @@
+/*  The Color Scheme is Black, Gold, Grey and White */
+body,html{
+    height: 100vh;
+}
+
+body{
+    /*font-family: monospace;*/
+    margin: 0;
+    padding:0;
+    /*background-color: #f1f0f0;*/
+    background-color: black;
+    display: grid;
+
+    gap: 10px;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'orange', "Sama Devanagari";
+    font-weight: bold;
+    font-size: 20px;
+
+    display: grid;
+    /*display:inline-grid;*/
+
+    grid-template-columns: 0.5fr 1fr 2.0fr 1.9fr;
+    grid-template-rows: 0.27fr 0.5fr 2px auto;
+    /*grid-template-rows:repeat(4, 1fr);*/
+
+    grid-template-areas:
+    "Aside Header Header Header"
+    "Aside Nav Nav Nav"
+    "Aside Main Main Main"
+    "Aside Main Main Main";
+
+    gap: 5px;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.Header {
+    justify-self: stretch;
+    grid-area: Header;
+    background-color:black;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px darkblue;
+}
+
+.Nav {
+    justify-self: stretch;
+    grid-area: Nav;
+    /*overflow: hidden;*/
+    background-color: orange;
+}
+.Nav a{
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    float:left;
+}
+.Nav a.right{
+    float:right;
+}
+
+.Nav a:hover{
+    background-color: #333;
+}
+
+.Main {
+    justify-self: stretch;
+    /*grid-column-end: auto;*/
+    grid-area: Main;
+    background-color: dimgrey;
+    /*justify-content: center;*/
+    width: 100%;
+
+}
+/*This is the css for the Header of the Blog*/
+.Post-Title{
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    border: 10px solid black;
+
+}
+
+.Main figure{
+    /*max-width: 33.33%;*/
+    /*max-height: 33.33%;*/
+    display: block;
+    justify-content: stretch;
+    background-color: white;
+    /*width: 50px;*/
+    text-align: center;
+    padding: 20px;
+}
+.Main figure img {
+    /*height: auto;*/
+    width: 600px;
+    /*width: auto;*/
+}
+
+.Aside {
+    justify-self: stretch;
+    grid-area: Aside;
+    /*grid-area: sidebar;*/
+    background-color: orange;
+    /*padding: 10px;*/
+    text-align: center;
+
+}
+
+.Aside h1 {
+    text-align: center;
+    /*color: #d4af37;*/
+    /*padding: 20px;*/
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px darkblue;
+    background-color: dimgrey;
+}
