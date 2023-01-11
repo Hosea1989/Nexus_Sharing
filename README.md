@@ -1,4 +1,10 @@
-# CSC 317 Course Project
+
+# Nexus_Sharing
+This website was made from a course project I did in school so I am putting it here
+and gonna continue working on it.
+
+
+## CSC 317 Course Project
 
 ## Purpose
 
