@@ -1,0 +1,44 @@
+<!--Login Form-->
+<!--This is how a user logs into their account to post and leave comments-->
+
+<form id="Login_Form" name="Login_form" action="/users/login" method='POST'
+      enctype="application/x-www-form-urlencoded">
+
+    <header>
+        <h1>Login</h1>
+        <p> Use this form to Login to your account</p>
+    </header>
+
+    <div class="username">
+        <label for="uname"></label>
+        <input type="text" placeholder="Enter Username" name="username" id="uname" required>
+        <div id="username_error"></div>
+    </div>
+
+    <div class="password">
+        <label for="psw"></label>
+        <input type="password" name="password" id="psw" placeholder="Enter Password" required>
+        <div id="password_error"></div>
+    </div>
+
+    <button id="submit" type="submit" class="btn btn-success" >Submit</button>
+    <button id="reset" type="reset" class="btn btn-danger">Reset</button>
+
+    <div class="checkbox">
+        <label for="checkbox"></label>
+        <input type="checkbox" id="checkbox">
+        <span>Remember Me</span>
+
+    </div>
+    <br>
+
+    <div class="Forgot-and-createContainer">
+
+    <div class="Forgot-Container">
+        <span> Forgot Password?<a href="https://www.youtube.com/watch?v=u92RWKB3CR4"><br>Click Here</a></span>
+    </div>
+    <div class="Create-Account-Container">
+        <span>Don't have an account? <a href="/registration"><br>Register</a></span>
+    </div>
+    </div>
+</form>

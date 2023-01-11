@@ -1,0 +1,37 @@
+{
+  "name": "application",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "proj_init": "./config/csc317db.sql",
+    "start": "nodemon ./bin/www",
+    "builddb": "node bin/dbloader.js",
+    "grade": "npm i && node bin/dbloader.js  && nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bootstrap": "^5.2.3",
+    "colors": "^1.4.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^5.3.2",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.2",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
+    "react-dom": "^18.2.0",
+    "react-toastify": "^9.1.1",
+    "serve-favicon": "^2.5.0",
+    "sharp": "^0.31.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}

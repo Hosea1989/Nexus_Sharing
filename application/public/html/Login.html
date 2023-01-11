@@ -1,0 +1,77 @@
+<!--
+Must have document title
+o Must have a section heading introducing the form
+o Must have a nav bar.
+o Input fields are REQUIRED to be in form tags.
+o Must ask user to input a username
+o Must ask user to input a password.
+▪ Password input must be correct input type (i.e. when I type I should not see the
+password)
+o Must have the user click a submit button to submit login form. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../css/loginStyle.css">
+<!--    <script defer src="../js/Validate_Login.js"></script>-->
+</head>
+<body>
+
+<header>
+    <h1>Damien's Articles </h1>
+</header>
+
+<!--NAV-->
+<!--This is the Nav Bar-->
+<hr>
+<nav>
+    <a href="/application/public/html/Index.html/">Main Page</a>
+    <a href="/html/Post_iMage.html">Post Article</a>
+    <a href="/application/public/html/Registration.html/">Register</a>
+    <a href="/application/public/html/View_Post.html/">View Post</a>
+</nav>
+<hr>
+
+<form action="action_page.php">
+    <h2>Login</h2>
+    <p><em> Use this form to Login to your account</em></p>
+    <label for="username"></label>
+    <input type="text"
+           placeholder="Enter Username"
+           name="username"
+           id="username" required>
+
+    <label for="psw"></label>
+    <input type="password"
+           name="password"
+           id="psw"
+           placeholder="Enter Password" required>
+
+    <input type="button" value="Login">
+    <br>
+    <label for="checkbox"></label>
+    <input type="checkbox"
+           id="checkbox">
+
+    <span>Remember Me</span>
+    <br><br>
+
+    <div class="Forgot-Container">
+        <a href="https://www.youtube.com/watch?v=g_tBZSs83eg">Forgot Password?</a>
+    </div>
+    <br><br><br>
+
+    <div class="Create-Account-Container">
+        <p>Don't have an account? <a href="#"><br>Create an account</a></p>
+    </div>
+</form>
+
+<footer class="site_footer ">
+    <h6> Website Developed by Damien Hosea </h6>
+    <h6>Github: <a href="https://github.com/hosea1989"> <mark>ClIcK hErE</mark></a></h6>
+</footer>
+
+</body>
+</html>

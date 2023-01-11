@@ -1,0 +1,26 @@
+<!--Fix the font colors on this page and also fix the JS for it as well-->
+<!--Main Page-->
+<!--Displays new posted photos-->
+
+<!--To do-->
+<!--
+Change the background
+get this flash message to disappear
+fix the cards for when a new post is created
+
+-->
+<div class="photo-Container">
+    <header> <h1 class="indexHeader">Home Page</h1> </header>
+    <main id="main-content">
+        {{#each results}}
+            <div class='photoCard'>
+                <img class="img" src="{{this.thumbnail}}" alt=" ">
+                <p class="title">{{this.title}}</p>
+<!--                <p class=" desc">{{this.description}}</p>-->
+                <a class="link" href="posts/{{this.id}}">Details</a>
+            </div>
+        {{/each}}
+    </main>
+
+</div>
+

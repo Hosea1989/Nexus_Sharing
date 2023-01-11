@@ -1,0 +1,195 @@
+/* This is a comment in CSS */
+
+/*This should be the same for all pages*/
+body{
+    font-family: monospace;
+    margin: 0;
+    padding:0;
+    background-color: black;
+    /* background: rgb(2,0,36); */
+    display: grid;
+    gap: 10px;
+}
+
+section{
+    text-align: center;
+}
+
+.photo-container {
+    display: grid;
+    grid-template-areas:
+'header header header header header'
+'main main main main main';
+    grid-auto-rows: auto auto auto;
+}
+header{
+    grid-area: header;
+}
+
+.photoContainer{
+    /*width: 100%;*/
+    /*border: 4px outset white;*/
+    /*padding: 30px;*/
+    /*margin: auto;*/
+    /*background: darkgray;*/
+    grid-area: main;
+    width: 90%;
+    border: 4px outset white;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background: darkgray;
+    max-width: 500px;
+
+}
+header h1{
+    background-color: #232323;
+    border: 2px outset silver;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.indexHeader{
+    box-shadow: 10px 10px 5px 0px rgb(0 0 0 / 75%);
+}
+
+.item1{
+    grid-area: header;
+    display: grid;
+    /*position: sticky;*/
+    width: 100%;
+    grid-template-areas:
+'counter counter ... search search';
+    /*color: white;*/
+    /*text-align: center;*/
+    /*background-color: darkblue;*/
+    /*opacity: 70%;*/
+}
+
+.item1 label{
+    border: 1px solid grey;
+    margin:16px;
+    padding: 2px;
+}
+
+.item2{
+    /*grid-area: main;*/
+    /*margin: auto;*/
+}
+
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*width: 550px;*/
+    border: 4px outset white;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    /*background: darkgray;*/
+    -webkit-box-shadow: -12px 11px 13px 11px rgba(0,0,0,0.75);
+    background-color: rgba(126, 138, 138, 0.7);
+}
+
+.photoCard{
+    /*background-color: black;*/
+    place-items: center;
+    /*grid-template-rows: repeat(3,auto);*/
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    display: grid;
+    grid-template-areas:
+    'title title title'
+    'img img img'
+    'link link link';
+
+    width: inherit;
+    /*height: inherit;*/
+
+    background: linear-gradient(to bottom, grey 0%, #ffffff 21%);
+    border: 3px solid darkslategray;
+    border-radius: 12px;
+    padding: 5px;
+    height: fit-content;
+}
+
+.photoCard{
+
+}
+
+.photoCard:hover{
+    border: 3px solid #9400D3;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.title{
+    grid-area: title;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-family: sans-serif;
+    /*text-shadow: ;*/
+}
+
+.link{
+    grid-area: link;
+    text-align: center;
+}
+
+.img{
+    grid-area: img;
+    object-fit: fill;
+    border: 3px outset darkslategray;
+
+    /*object-fit: cover;*/
+    /*width: 100%;*/
+    max-height: 100%;
+}
+
+
+/*.item2 .photo_box{*/
+/*    opacity: 95%;*/
+/*    !*padding: 50px;*!*/
+/*    border: 2px black outset;*/
+/*    float: right;*/
+
+/*}*/
+
+#event{
+    height: 100px;
+}
+
+.item2 p{
+    width: 90%;
+    color: white;
+    background: #000000;
+    opacity: 80%;
+    text-align: center;
+    float: right;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    background: white;
+    justify-content: center;
+    float: right;
+}
+#items-count{
+    text-align: center;
+    color: white;
+}
+/*---------------------*/
+
+.item3 {
+    grid-area:footer;
+    text-align: center;
+    color: white;
+}
+.site_footer{
+    color: white;
+    text-align: center;
+}

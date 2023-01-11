@@ -1,0 +1,73 @@
+/*Navigation Bar -- Style*/
+
+.navBar{
+    overflow: hidden;
+    background-color: #333;
+    box-shadow: 0px 0px 10px 0px silver;
+    display: flex!important;
+    justify-content: center;
+}
+
+.navBar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    width: fit-content;
+    block-size: fit-content;
+}
+
+.navBar li {
+    float: left;
+    padding: 19px;
+}
+.login{
+    float: right;
+}
+
+#search-text{
+    width: 800px;
+    margin-top: inherit;
+}
+.navBar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 13px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    border: 2px inset #1b485f;
+}
+
+#logout-button{
+    font-size:inherit;
+    border: 2px outset #3e1729;
+}
+
+.navBar a:hover {
+    background-color: #5a5a62;
+}
+
+.navBar label{
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+
+.search{
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+
+
+/*----------------------------*/

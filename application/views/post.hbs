@@ -1,0 +1,63 @@
+<!--Fix the input fields on this page to make the styling on the other forms-->
+
+<!--Post -->
+<!--This page allows USERS to post a single photo-->
+
+
+<!--TO DO -->
+<!--
+Fix the navbar for the respective page
+fix the form
+
+-->
+<form id="postImageForm"
+      name="postImageForm"
+      method='POST'
+      action="/posts/create"
+      enctype="multipart/form-data">
+
+<!--    header  -->
+    <header>
+        <h1>Create New Post</h1>
+        <p>Fill  in this form to create a new post</p>
+    </header>
+
+
+    <div class="postTitle">
+        <label for="postTitle"> </label>
+        <input type="text"
+               id="postTitle"
+               placeholder="Title of your new post"
+               name="title"
+               required>
+    </div>
+
+    <div class="postCaption">
+        <label for="postCaption"></label>
+        <textarea type="text"
+                  id="postCaption"
+                  name="description"
+                  rows="4"
+                  cols="50"
+                  placeholder="A Description for your new post..."></textarea>
+    </div>
+    
+    <label for="image">Upload Photo: <br></label>
+    <input type="file"
+           id="image"
+           placeholder="Title"
+           name="uploadImage"
+           multiple>
+
+    <br><br>
+    <button id="submit"
+            type="submit"
+            class="btn-success">Submit
+    </button>
+
+    <button id="reset"
+            type="reset"
+            class="btn-danger">Reset
+    </button>
+
+</form>

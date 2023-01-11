@@ -1,0 +1,149 @@
+"use strict";
+const mysql = require("mysql2/promise");
+
+function displayWarningMessage(warning) {
+  switch (warning.Code) {
+    case 1007:
+      console.log(`Skipping Database Creation --> ${warning.Message}`);
+      break;
+    case 1050:
+      console.log(`Skipping Table Creation --> ${warning.Message}`);
+      break;
+  }
+}
+
+async function getConnection() {
+  return mysql.createConnection({
+    host: "localhost",
+    //TODO make sure to change to the user you want to use
+    user: "root", //Your DB username
+    //TODO make sure to change to the correct password for your user.
+    password: "damien123", //Your DB password
+  });
+}
+
+async function makeDatabase(connection) {
+  //TODO make sure to change yourdbnamehere
+  const [result, _] = await connection.query(
+    "CREATE DATABASE IF NOT EXISTS csc317db;"
+  );
+  if (result && result.warningStatus > 0) {
+    const [warningResult, _] = await connection.query("SHOW WARNINGS");
+    displayWarningMessage(warningResult[0]);
+  } else {
+    console.log("Created Database!");
+  }
+}
+
+async function makeUsersTable(connection) {
+  const [result, _] = await connection.query(
+    // Users Table SQL Goes here
+    `
+    CREATE TABLE IF NOT EXISTS csc317db.users (
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(64) NOT NULL,
+  email VARCHAR(128) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+  UNIQUE INDEX username_UNIQUE (username ASC) VISIBLE,
+  UNIQUE INDEX email_UNIQUE (email ASC) VISIBLE)
+ENGINE = InnoDB
+
+    `
+  );
+
+  if (result && result.warningStatus > 0) {
+    const [warningResult, _] = await connection.query("SHOW WARNINGS");
+    displayWarningMessage(warningResult[0]);
+  } else {
+    console.log("Created Users Table!");
+  }
+}
+
+async function makePostsTable(connection) {
+  const [result, _] = await connection.query(
+    // Posts Table SQL Goes here
+    `
+    CREATE TABLE IF NOT EXISTS csc317db.posts (
+  id INT NOT NULL AUTO_INCREMENT,
+  description TEXT NOT NULL,
+  image VARCHAR(4096) NOT NULL,
+  thumbnail VARCHAR(4096) NOT NULL,
+  title VARCHAR(128) NOT NULL,
+  fk_authorid INT NOT NULL,
+  createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+  INDEX postAuthor_idx (fk_authorid ASC) VISIBLE,
+  CONSTRAINT postAuthor
+    FOREIGN KEY (fk_authorid)
+    REFERENCES csc317db.users (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+    `
+  );
+  if (result && result.warningStatus > 0) {
+    const [warningResult, _] = await connection.query("SHOW WARNINGS");
+    displayWarningMessage(warningResult[0]);
+  } else {
+    console.log("Created Posts Table!");
+  }
+}
+
+async function makeCommentsTable(connection) {
+  const [result, _] = await connection.query(
+    // Comments Table SQL Goes here
+    ` 
+    CREATE TABLE IF NOT EXISTS csc317db.comments (
+  id INT NOT NULL AUTO_INCREMENT,
+  text TEXT NOT NULL,
+  fk_authorid INT NULL,
+  fk_postid INT NOT NULL,
+  createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE INDEX id_UNIQUE (id ASC) VISIBLE,
+  INDEX commentAuthor_idx (fk_authorid ASC) VISIBLE,
+  INDEX commentpost_idx (fk_postid ASC) VISIBLE,
+  CONSTRAINT commentauthor
+    FOREIGN KEY (fk_authorid)
+    REFERENCES csc317db.users (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT commentpost
+    FOREIGN KEY (fk_postid)
+    REFERENCES csc317db.posts (id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+    `
+  );
+  if (result && result.warningStatus > 0) {
+    const [warningResult, _] = await connection.query("SHOW WARNINGS");
+    displayWarningMessage(warningResult[0]);
+  } else {
+    console.log("Created Comments Table!");
+  }
+}
+
+(async function main() {
+  let connection = null;
+  try {
+    connection = await getConnection();
+    await makeDatabase(connection); // make DB
+    //TODO make sure to change yourdbnamehere
+    await connection.query("USE csc317bd"); // set new DB to the current DB
+    await makeUsersTable(connection); // try to make user table
+    await makePostsTable(connection); // try to make posts table
+    await makeCommentsTable(connection); // try to make comments table
+    connection.close();
+    return;
+  } catch (error) {
+    console.error(error);
+    if (connection != null) {
+      connection.close();
+    }
+  }
+})();

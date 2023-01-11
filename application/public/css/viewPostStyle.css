@@ -1,0 +1,100 @@
+/*  The Color Scheme is Black, Gold, Grey and White */
+body,html{
+    height: 100vh;
+}
+
+body{
+    font-family: monospace;
+    margin: 0;
+    padding:0;
+    /*background-color: #f1f0f0;*/
+    background-color: black;
+    display: grid;
+    gap: 10px;
+}
+
+main{
+    width: inherit;
+    height: inherit;
+    border: 4px outset white;
+    padding: 20px;
+    margin: auto;
+    background: darkgray;
+    display: inline-block;
+}
+.postContainer{
+    /*background-color: black;*/
+    width: 850px;
+    height: inherit;
+    position: relative;
+    /*left: 360px;*/
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    min-width: 360px;
+    /*flex-direction: row-reverse;*/
+    /*background: linear-gradient(to bottom, grey 0%, #ffffff 21%);*/
+    border: 3px solid darkslategray;
+    border-radius: 12px;
+    padding: 5px;
+    -webkit-box-shadow: -12px 11px 13px 11px rgba(0,0,0,0.75);
+    background-color: rgba(126, 138, 138, 0.7);
+    margin: 70px 70px 70px 400px;
+}
+
+.postInformation{
+    font-size: 15px;
+    text-align: -webkit-center;
+
+
+}
+
+.postTitle{
+
+}
+
+/*.postDescription{*/
+/*    font-size: 15px;*/
+/*    text-align: -webkit-center;*/
+/*}*/
+
+.author{
+
+}
+
+.postDate{
+
+}
+
+.imageContainer{
+    width: 90%;
+    display: flex;
+    border: 4px inset silver;
+    margin-left: auto;
+    margin-right: auto;
+    grid-area: img;
+}
+
+.commentSection{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: revert;
+    /* -webkit-box-shadow: -12px 11px 13px 11px rgb(255 255 255 / 75%); */
+    background-color: rgb(0 0 0 / 70%);
+    position: relative;
+    color: white;
+    text-align: -webkit-center;
+    width: fit-content;
+    /* display: flex; */
+    align-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#comment-list{
+
+}
+
+
+

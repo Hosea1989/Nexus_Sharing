@@ -1,0 +1,49 @@
+
+
+<!--TO DO-->
+<!--
+Fix the font colors on this page
+Fix sizing of the box
+Fix the comments styling and color
+
+-->
+
+
+
+<main class="postContainer">
+<!--    Information about the Post -->
+    <div class="postInformation">
+        <h2 class="postTitle">{{currentPost.title}}</h2>
+
+        <p class="postDescription">{{currentPost.description}}</p>
+<!--   Date Time / Author -->
+        <div class="postDate&Author">
+            <p class="author">{{currentPost.username}}</p>
+            <p class="postDate">{{formatDate currentPost.createdAt}}</p>
+        </div>
+    </div>
+
+    <img class="imageContainer" src="/{{currentPost.image}}" alt=" "/>
+</main>
+<br>
+
+    <div class="commentSection">
+        <div class="commentBox">
+            <label for="comment-text"></label>
+            <textarea id="comment-text" class="comment-text"></textarea>
+            <button  id="comment-button"
+                     type="button"
+                     data-postid="{{currentPost.id}}"
+                     class="fa fa-comment fa-comment-box-button"
+                     aria-hidden="true">Comment
+            </button>
+        </div>
+        <div id="comment-list" class="comments">
+            {{#each currentPost.comments}}
+                <br>
+                {{> comment this}}
+            {{/each}}
+
+        </div>
+
+    </div>

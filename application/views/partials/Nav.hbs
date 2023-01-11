@@ -1,0 +1,39 @@
+<!--Nav bar needs to be updated to accommodate the idea of logging in and out -->
+<!--This is the NavBar -->
+<div class="navBar">
+    <ul>
+        <li> <a href="/">Home</a></li>
+        <li> <div>
+                <form class="searchBar"
+                method="GET"
+                action="/posts/search"
+                enctype="application/x-www-form-urlencoded">
+                    <label>
+                        <input id="search-text"
+                               type="text"
+                               placeholder="Search.."
+                               name="searchText"
+                               value="{{searchValue}}">
+                    </label>
+                    <button type="submit">Submit</button>
+                </form>
+        </div>
+        </li>
+
+        <li><a href="/post">Create Post</a></li>
+
+        <li>
+            <div class="login">
+            {{#if isLoggedIn}}
+                <a id=logout-button class="nav-item">Hi, {{username}} </a>
+            {{else}}
+                <a id=login-button class="nav-item" href="/login">Login</a>
+            {{/if}}
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<!--I want to add a search bar but also a magnifying glass for the search
+icon -->

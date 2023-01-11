@@ -1,0 +1,172 @@
+/*  The Color Scheme is Black, Gold, Grey and White */
+/*This used to be the stockStyling.css but I refactored this
+to stockStyling.css since this file was be the over all look for my
+pages. */
+
+/*Color Scheme: Black, Grey, Dark Orchid, white*/
+
+body{
+    height: 80%;
+}
+
+body{
+    font-family: monospace;
+    margin: 0;
+    padding:0;
+    display: grid;
+    gap: 10px;
+    background-image:url('../image/pexels-hristo-fidanov-1252890 (1).jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+/*=================HEADER================*/
+Header{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+header h1{
+    background-color: #232323;
+    border: 1px solid silver;
+    /*box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);*/
+
+}
+
+.siteHeader{
+    text-align: center;
+    /*color: #d4af37;*/
+    padding:09px;
+    font-size: 30px;
+    color: white;
+    /*text-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px darkblue;*/
+    overflow: auto;
+    /*background-color: black;*/
+    /*width: fit-content;*/
+    block-size: fit-content;
+    margin: auto;
+    /*box-shadow: inset 0px 0px 0px 5px white;*/
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(0 0 0 / 70%)
+
+}
+b{
+}
+/*======================================*/
+
+#uname,#email,#psw,#repeat_psw, #postTitle, #postCaption, #image {
+    font-size: medium;
+    /*height: 30px;*/
+    /*display: inline-block;*/
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    margin: 13px 0;
+    /*border: 1px solid black;*/
+    border-radius: 13px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    /*text-align: center;*/
+}
+
+
+
+
+input[type=button]{
+    width: 100%;
+    background-color: #3f3e3e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+}
+
+#password{
+    width: 300px;
+    height: 30px;
+    border:none;
+    border-radius: 3px;
+    /*padding-left: px*/
+}
+
+.submit-button{
+    background: #d4af37;
+    width: 300px;
+    height: 30px;
+    border:none;
+    border-radius: 17px;
+    padding-left:8px;
+    color:rgb(0, 0, 0)
+}
+
+.site_footer{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    /*height: 9%;*/
+}
+
+.photoContainer{
+    display: inline-block;
+}
+
+#username_error,#email_error,#pass_error,#confirm_error{
+    color: darkorchid;
+}
+
+/*=====================*/
+
+#alert{
+    color: #ffffff;
+    background-color: #b60303;
+    position: fixed;
+    font-family: "Times New Roman", Times, serif;
+
+    top: 2%;
+    right: 1%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
+    /*width: 300px;*/
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0,0,0, 0.7);
+    /*color: white;*/
+    animation: fade-in 2s ease;
+
+}
+
+.flash-message{
+    position: fixed;
+    color: white;
+
+}
+
+#success{
+    color: #ffffff;
+    background-color: Green;
+    top: 2%;
+    right: 1%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0,0,0, 0.7);
+    -webkit-animation: fadeInAndOut 10s forwards;
+    position: fixed;
+}
+
+@-webkit-keyframes fadeInAndOut{
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+

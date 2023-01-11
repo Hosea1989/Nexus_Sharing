@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{NeXuS}}</title>
+    <link rel="icon" href="//favicon.ico" sizes="70x70" type="image/ico">
+      <link rel='stylesheet' href='../../public/css/stockStyling.css'/>
+      <link rel='stylesheet' href='../../public/css/navStyling.css'/>
+
+
+      <!--  This is how you'd link you CSS to an individual page-->
+      {{#each css}}
+          <link rel='stylesheet' href='../../public/css/{{this}}'
+              {{this}} />
+      {{/each}}
+      <!--End of CSS for each-->
+      <!--This is how you would link you would JS to each individual page-->
+      {{#each js}}
+          <script defer src="/public/js/{{this}}"></script>
+      {{/each}}
+  </head>
+
+  <body>
+
+  {{#if (noneEmptyObject messages)}}
+      {{> flashmessage }}
+  {{/if}}
+
+ <div id="container">
+        {{> Header}}
+        {{> Nav}}
+    {{{body}}}
+     {{> Footer}}
+ </div>
+
+  </body>
+
+
+{{#if isLoggedIn }}
+    <script>
+        document.getElementById('logout-button')
+                .addEventListener('click', function(ev){
+                    fetch('/users/logout', {method: "POST"})
+                            .then(response => response.json())
+                            .then(function(res_json){
+                                console.log(res_json);
+                                window.location.replace('/')
+                            })
+                            .catch(err => console.log(err));
+                })
+    </script>
+</html>
+
+    {{/if}}

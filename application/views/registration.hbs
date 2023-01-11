@@ -1,0 +1,57 @@
+<!--Fix front-end validation to prevent invalid information from going into server-->
+
+<form id="registration" class="formRegistration" method ='POST' action="/users/register"
+enctype="application/x-www-form-urlencoded">
+
+    <header>
+        <h1> Registration Form </h1>
+        <p>Welcome!</p>
+        <p> Please fill in this form to create an account. </p>
+    </header>
+
+    <div class=username>
+        <label for="uname"></label>
+        <input type="text" id="uname"  placeholder="Username" autocomplete="off" name="username">
+        <div id="username_error"></div>
+    </div>
+
+    <div class=email>
+        <label for="email"></label>
+        <input type="email" id="email"  placeholder="Enter Email" name="email">
+        <div id="email_error"></div>
+    </div>
+
+    <div class=password>
+        <label for="psw"></label>
+        <input type="password" placeholder="Password" id="psw" name="password">
+        <div id="pass_error"></div>
+    </div>
+
+    <div class=password>
+        <label for="repeat_psw"></label>
+        <input type="password" placeholder="Confirm Password"  id="repeat_psw" name="cpassword">
+        <div id="confirm_error"></div>
+    </div>
+
+    <div class="Terms-Container">
+        <label for="confirm"></label>
+        <input type="checkbox" id="confirm" value="confirm" >
+
+        <label for="confirm"> Confirm age of 13+ years </label><br>
+
+        <label for="confirm"></label>
+        <label for="confirm_age"></label><input type="checkbox" id="confirm_age" value="confirm" >
+
+        <label for="confirm">Agree to <a href="https://www.termsofservicegenerator.net/" target="_blank"> Terms and Privacy Policy</a></label>
+    </div>
+
+    <button id="submit" type="submit" class="btn-success">Submit</button>
+    <div id="fix_error"></div>
+
+    <button id="reset" type="reset" class="btn-danger">Reset</button>
+    <small></small>
+
+    <div class="Login-Container">
+        <p> Already have an account? <a href="/login"> Sign in Here</a></p>
+    </div>
+</form>
